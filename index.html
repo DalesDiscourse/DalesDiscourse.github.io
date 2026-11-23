@@ -62,6 +62,20 @@
       </ul>
     </section>
 
+    <!-- ===== SHARE BUTTONS =====
+         Plain links: no tracking code from Facebook or anyone else is loaded. -->
+    <section class="share" aria-label="Share this page">
+      <p class="share-title">Please share this page with neighbours, family and anyone who uses these roads:</p>
+      <div class="share-buttons">
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdalesdiscourse.github.io%2F" target="_blank" rel="noopener">Facebook</a>
+        <a class="share-btn" href="https://wa.me/?text=Yorkshire%20Dales%20Rally%2C%20Sunday%2026th%20March%202028%3A%20what%20residents%20need%20to%20know%20https%3A%2F%2Fdalesdiscourse.github.io%2F" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="share-btn" href="https://twitter.com/intent/tweet?text=Yorkshire%20Dales%20Rally%2C%20Sunday%2026th%20March%202028%3A%20what%20residents%20need%20to%20know&amp;url=https%3A%2F%2Fdalesdiscourse.github.io%2F" target="_blank" rel="noopener">X (Twitter)</a>
+        <a class="share-btn" href="mailto:?subject=Yorkshire%20Dales%20Rally%2C%20Sunday%2026th%20March%202028%3A%20what%20residents%20need%20to%20know&amp;body=You%20may%20find%20this%20useful%3A%20https%3A%2F%2Fdalesdiscourse.github.io%2F">Email</a>
+        <button type="button" class="share-btn copy-link">Copy link</button>
+        <span class="copy-link-msg" aria-live="polite"></span>
+      </div>
+    </section>
+
     <!-- ===== SECTION 1: REGISTER ===== -->
     <section id="register">
       <h2>1. Ask to be consulted by Motorsport UK</h2>
@@ -278,6 +292,20 @@ Yours sincerely,
       </dl>
     </section>
 
+    <!-- ===== SHARE BUTTONS =====
+         Plain links: no tracking code from Facebook or anyone else is loaded. -->
+    <section class="share" aria-label="Share this page">
+      <p class="share-title">Please share this page with neighbours, family and anyone who uses these roads:</p>
+      <div class="share-buttons">
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdalesdiscourse.github.io%2F" target="_blank" rel="noopener">Facebook</a>
+        <a class="share-btn" href="https://wa.me/?text=Yorkshire%20Dales%20Rally%2C%20Sunday%2026th%20March%202028%3A%20what%20residents%20need%20to%20know%20https%3A%2F%2Fdalesdiscourse.github.io%2F" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="share-btn" href="https://twitter.com/intent/tweet?text=Yorkshire%20Dales%20Rally%2C%20Sunday%2026th%20March%202028%3A%20what%20residents%20need%20to%20know&amp;url=https%3A%2F%2Fdalesdiscourse.github.io%2F" target="_blank" rel="noopener">X (Twitter)</a>
+        <a class="share-btn" href="mailto:?subject=Yorkshire%20Dales%20Rally%2C%20Sunday%2026th%20March%202028%3A%20what%20residents%20need%20to%20know&amp;body=You%20may%20find%20this%20useful%3A%20https%3A%2F%2Fdalesdiscourse.github.io%2F">Email</a>
+        <button type="button" class="share-btn copy-link">Copy link</button>
+        <span class="copy-link-msg" aria-live="polite"></span>
+      </div>
+    </section>
+
     <!-- ===== SOURCES AND DISCLAIMER ===== -->
     <section id="sources" class="panel small">
       <h2>Sources</h2>
@@ -309,6 +337,21 @@ Yours sincerely,
           });
         } catch (e) {
           msg.textContent = 'Please select the text and copy it by hand.';
+        }
+      });
+    });
+    // Copies the page address when "Copy link" is pressed.
+    document.querySelectorAll('.copy-link').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var msg = btn.nextElementSibling;
+        try {
+          navigator.clipboard.writeText('https://dalesdiscourse.github.io/').then(function () {
+            msg.textContent = 'Link copied.';
+          }, function () {
+            msg.textContent = 'The address is dalesdiscourse.github.io';
+          });
+        } catch (e) {
+          msg.textContent = 'The address is dalesdiscourse.github.io';
         }
       });
     });
